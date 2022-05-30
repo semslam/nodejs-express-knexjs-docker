@@ -19,6 +19,8 @@ app.get("/", (req, res) => {
   res.status(200).send({ message: "Welcome to rock paper scissors game" });
 });
 
+require("./app/routes/article.route")(app)
+
 app.all('*', (req, res) => {
   res.status(200).send({ message: "Not Found" });
 });
