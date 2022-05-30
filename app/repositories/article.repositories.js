@@ -44,7 +44,7 @@ class ArticleRepo {
             if(!isUpdate)ErrorHandler("No article was update!",403);
             return isUpdate;
         } catch (err) {
-            throw new  ErrorHandler(err.message | "Can't update articles!",403); 
+            throw new  ErrorHandler(err.message | "Can't update article!",403); 
         }
         
     }
