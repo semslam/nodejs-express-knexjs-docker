@@ -4,7 +4,7 @@ class ErrorHandler extends Error{
         super(message)
         Error.captureStackTrace(this, this.constructor);
         this.name = this.constructor.name; 
-        this.message = message || 'Something went wrong. Please try again.';
+        this.message = message || 'Wrong request. Please try again.';
         this.httpCode = httpCode || 500;
     }
 }

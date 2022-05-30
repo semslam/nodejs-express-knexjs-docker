@@ -11,7 +11,7 @@ class ArticleRepo {
             .returning('id');
             return id;
         } catch (err) {
-            throw new  ErrorHandler(err.message | "Can't create article!",403) 
+            throw new ErrorHandler(err.message | "Can't create article!",403) 
         }
        
     }
@@ -32,7 +32,7 @@ class ArticleRepo {
             return await db.select()
         .from('article')
         } catch (error) {
-            throw new  ErrorHandler(err.message | "Can't find articles!",403);  
+            throw new ErrorHandler(err.message | "Can't find articles!",403);  
         }
         
     }
@@ -41,10 +41,10 @@ class ArticleRepo {
         try {
             const isUpdate = await db('article').where('id', id)
             .update(update);
-            if(!isUpdate)ErrorHandler("No article was update!",403);
+            if(!isUpdate)throw new ErrorHandler("No article was update!",403);
             return isUpdate;
         } catch (err) {
-            throw new  ErrorHandler(err.message | "Can't update article!",403); 
+            throw new ErrorHandler(err.message | "Can't update article!",403); 
         }
         
     }
@@ -53,7 +53,7 @@ class ArticleRepo {
         try {
             const isDelete = await db('article').where('id',id)
             .del();
-            if(!isDelete) ErrorHandler("No Article was delete!",403);
+            if(!isDelete)throw new ErrorHandler("No Article was delete!",403);
             return isDelete;
         } catch (err) {
             throw new ErrorHandler(err.message | "Can't delete articles!",403); 
