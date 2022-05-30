@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-express-knexjs-docker",
+  "version": "1.0.0",
+  "description": "nodejs expressjs knexjs docker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semslam/nodejs-express-knexjs-docker.git"
+  },
+  "author": "Ibrahim Olanrewaju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/semslam/nodejs-express-knexjs-docker/issues"
+  },
+  "homepage": "https://github.com/semslam/nodejs-express-knexjs-docker#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
