@@ -21,7 +21,8 @@ class ArticleService{
     async update(id,article) {
         return await articleRepo.updateArticle(id,{
             heading:article.heading,
-            content:article.content 
+            content:article.content,
+            updated_at: new Date()
         })
     }
 

@@ -47,7 +47,7 @@ exports.create = async (req, res) => {
           filedResponse(res,403,"You need pass article id");
         }
         const id = req.params.id;
-        const article = await articleServices.findById(id)
+        const [article] = await articleServices.findById(id)
       
         successResponse(res,200,"Find article by id was successfully!",article); 
       } catch (err) {
