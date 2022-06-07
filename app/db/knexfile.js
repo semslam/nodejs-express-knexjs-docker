@@ -12,6 +12,7 @@ const { CLIENT, DATABASE, PG_USER, PASSWORD, HOST, PG_PORT } = process.env;
   development: {
     client: CLIENT,
     connection: {
+      host: 'db',// this is container host, the default host is localhost or 127.0.0.1
       user : PG_USER,
       password:PASSWORD,
       database : DATABASE

@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  server:
+    build: .
+    ports:
+      - '7000:8000'
+    volumes:
+      - ./:/urs/src/app
+      - /urs/src/app/node_modules
+    environment:
+      - PORT=7000
+  db:
+    image: 'postgres'
+    environment:
+      POSTGRES_PASSWORD: 'showme007'
+      POSTGRES_USER: 'postgres'
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
