@@ -17,6 +17,7 @@ const successResponse = (res,HTTP_SUCCESS,successMessage, data = null) =>{
       }
       if(!isEmpty(data))  result.data = data;
       if(res.writableEnded)return;
+      console.log(result);
    return res.status(HTTP_SUCCESS).send(result);
 }
 
@@ -26,6 +27,7 @@ const filedResponse = (res,HTTP_ERROR,errorMessage) =>{
         status:STATUS_FAILED,
         message:errorMessage
       }
+      console.log(result);
       if(res.writableEnded)return;
    return res.status(HTTP_ERROR).send(result);    
 }
