@@ -1,7 +1,7 @@
 # nodejs-express-knexjs-docker
 nodejs expressjs knexjs docker
 
-# How to create postgres docker image
+# Installing postgres docker image
 docker run --name postgres-article -e POSTGRES_PASSWORD=123456 -d -p 4321:5432  postgres
 
 # How to run postgres docker image

@@ -4,6 +4,10 @@
   "description": "nodejs expressjs knexjs docker",
   "main": "server.js",
   "scripts": {
+    "start":"node server.js",
+    "migration":"node app/db/migrate.js",
+    "start_app":"npm run migration && npm run migrate && npm start",
+    "migrate": "export NODE_ENV=development && knex --knexfile app/db/knexfile.js migrate:latest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -4,12 +4,17 @@ services:
   server:
     build: .
     ports:
-      - '7000:8000'
+      - '8000:7000'
+    depends_on:
+      - "db"    
     volumes:
       - ./:/urs/src/app
       - /urs/src/app/node_modules
     environment:
-      - PORT=7000
+      NODE_ENV: development
+      PORT: 7000
+      HOST: db
+    command: ["npm", "run", "start_app"]  
   db:
     image: 'postgres'
     environment:

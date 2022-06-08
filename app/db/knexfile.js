@@ -1,5 +1,6 @@
 // Update with your config settings.
-require('dotenv').config();
+const path = require("path");
+require('dotenv').config({path: path.resolve(__dirname, `../../.${process.env.NODE_ENV}.env`)});
 
 const { CLIENT, DATABASE, PG_USER, PASSWORD, HOST, PG_PORT } = process.env;
 
@@ -12,7 +13,7 @@ const { CLIENT, DATABASE, PG_USER, PASSWORD, HOST, PG_PORT } = process.env;
   development: {
     client: CLIENT,
     connection: {
-      host: 'db',// this is container host, the default host is localhost or 127.0.0.1
+      host: HOST,// this is container host, the default host is localhost or 127.0.0.1
       user : PG_USER,
       password:PASSWORD,
       database : DATABASE,
